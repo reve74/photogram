@@ -47,13 +47,15 @@ public class Image {
 	private List<Likes> likes;
 	// 댓글
 	
-	private LocalDateTime createDate;
+
 	
 	@Transient // DB에 컬럼이 만들어지지 않는다.
 	private boolean likeState;
 	
 	@Transient
 	private int likeCount;
+	
+	private LocalDateTime createDate;	
 	
 	@PrePersist // 디비에 INSERT 되기 직전에 실행
 	public void createDate() {

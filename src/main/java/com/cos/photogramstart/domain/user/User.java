@@ -45,7 +45,7 @@ public class User {
 	private String gender;
 	private String phone;
 	
-	private String profileimageURL;
+	private String profileImageUrl;
 	private String role;
 	
 	// 나는 연관관계의 주인이 아니다. 그러므로 테이블에 컬럼을 만들지마.
