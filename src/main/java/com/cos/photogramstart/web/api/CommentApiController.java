@@ -33,9 +33,7 @@ public class CommentApiController {
 	@PostMapping("/api/comment") 
 	public ResponseEntity<?> commentSave(@Valid @RequestBody CommentDto commentDto, BindingResult bindingResult, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 
-<<<<<<< HEAD
 
-=======
 		if(bindingResult.hasErrors()) {
 			Map<String, String> errorMap = new HashMap<>();
 			
@@ -44,7 +42,7 @@ public class CommentApiController {
 			}
 			throw new CustomValidationApiException("유효성 검사 실패함", errorMap);
 		}
->>>>>>> 81484df209e524d3ca70d37f3d069d750d8e2401
+
 		
 		Comment comment =  commentService.댓글쓰기(commentDto.getContent(), commentDto.getImageId(), principalDetails.getUser().getId()); // content, imageId, userId
 		return new ResponseEntity<>(new CMRespDto<>(1, "댓글쓰기 성공", comment), HttpStatus.CREATED);
